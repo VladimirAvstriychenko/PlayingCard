@@ -13,6 +13,9 @@
 		E70C04EA24D6A0000069847C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E70C04E824D6A0000069847C /* Main.storyboard */; };
 		E70C04EC24D6A0010069847C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E70C04EB24D6A0010069847C /* Assets.xcassets */; };
 		E70C04EF24D6A0010069847C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E70C04ED24D6A0010069847C /* LaunchScreen.storyboard */; };
+		E70C04F724D6A0160069847C /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C04F624D6A0160069847C /* PlayingCard.swift */; };
+		E70C04F924D6A2E40069847C /* PlayingCardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C04F824D6A2E40069847C /* PlayingCardDeck.swift */; };
+		E70C04FF24D6ABF70069847C /* PlayingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C04FE24D6ABF70069847C /* PlayingCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		E70C04EB24D6A0010069847C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E70C04EE24D6A0010069847C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E70C04F024D6A0010069847C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E70C04F624D6A0160069847C /* PlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
+		E70C04F824D6A2E40069847C /* PlayingCardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardDeck.swift; sourceTree = "<group>"; };
+		E70C04FE24D6ABF70069847C /* PlayingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,50 @@
 		E70C04E124D6A0000069847C /* PlayingCard */ = {
 			isa = PBXGroup;
 			children = (
-				E70C04E224D6A0000069847C /* AppDelegate.swift */,
 				E70C04E424D6A0000069847C /* SceneDelegate.swift */,
-				E70C04E624D6A0000069847C /* ViewController.swift */,
-				E70C04E824D6A0000069847C /* Main.storyboard */,
-				E70C04EB24D6A0010069847C /* Assets.xcassets */,
-				E70C04ED24D6A0010069847C /* LaunchScreen.storyboard */,
+				E70C04FB24D6ABB50069847C /* Model */,
+				E70C04FD24D6ABD50069847C /* Controller */,
+				E70C04FC24D6ABC80069847C /* View */,
+				E70C04FA24D6ABA00069847C /* SupportingFiles */,
 				E70C04F024D6A0010069847C /* Info.plist */,
 			);
 			path = PlayingCard;
+			sourceTree = "<group>";
+		};
+		E70C04FA24D6ABA00069847C /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				E70C04E224D6A0000069847C /* AppDelegate.swift */,
+				E70C04ED24D6A0010069847C /* LaunchScreen.storyboard */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		E70C04FB24D6ABB50069847C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E70C04F824D6A2E40069847C /* PlayingCardDeck.swift */,
+				E70C04F624D6A0160069847C /* PlayingCard.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E70C04FC24D6ABC80069847C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E70C04E824D6A0000069847C /* Main.storyboard */,
+				E70C04EB24D6A0010069847C /* Assets.xcassets */,
+				E70C04FE24D6ABF70069847C /* PlayingCardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E70C04FD24D6ABD50069847C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E70C04E624D6A0000069847C /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +180,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E70C04E724D6A0000069847C /* ViewController.swift in Sources */,
+				E70C04FF24D6ABF70069847C /* PlayingCardView.swift in Sources */,
 				E70C04E324D6A0000069847C /* AppDelegate.swift in Sources */,
+				E70C04F924D6A2E40069847C /* PlayingCardDeck.swift in Sources */,
+				E70C04F724D6A0160069847C /* PlayingCard.swift in Sources */,
 				E70C04E524D6A0000069847C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
