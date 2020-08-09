@@ -8,16 +8,30 @@
 
 import UIKit
 
+@IBDesignable
 class PlayingCardView: UIView {
-
-    var rank: Int = 5 {didSet {setNeedsDisplay(); setNeedsLayout()}}
+    @IBInspectable
+    var rank: Int = 6 {didSet {setNeedsDisplay(); setNeedsLayout()}}
+    @IBInspectable
     var suit: String = "♥️" {didSet {setNeedsDisplay(); setNeedsLayout()}}
+    @IBInspectable
     var isFaceUp: Bool = true {didSet {setNeedsDisplay(); setNeedsLayout()}}
-    
+   
+    var faceCardScale: CGFloat = SizeRatio.faceCardImageSizeToBoundsSize{
+        didSet {setNeedsDisplay()}
+    }
     private lazy var upperLeftCornerLabel = createCornerLabel()
     private lazy var lowerRightCornerLabel = createCornerLabel()
     
-    
+    @objc func adjustFaceCardScael(byHandlingGestureRecognizedBy recognizer: UIPinchGestureRecognizer) {
+        switch recognizer.state {
+        case .changed, .ended:
+            faceCardScale *= recognizer.scale
+            recognizer.scale = 1.0
+        default:
+            break
+        }
+    }
     override func draw(_ rect: CGRect) {
 //        if let context = UIGraphicsGetCurrentContext() {
 //            context.addArc(center: CGPoint(x: bounds.midX, y: bounds.midY), radius: CGFloat(100.00), startAngle: CGFloat(0.00), endAngle: 2*CGFloat.pi, clockwise: true)
@@ -40,6 +54,17 @@ class PlayingCardView: UIView {
         roundedRect.addClip()
         UIColor.white.setFill()
         roundedRect.fill()
+        if isFaceUp {
+            if let faceCardImage = UIImage(named: rankString+suit, in: Bundle(for: self.classForCoder), compatibleWith: traitCollection){
+                faceCardImage.draw(in: bounds.zoom(by: faceCardScale))
+            } else {
+                drawPips()
+            }
+        } else {
+            if let cardBackImage = UIImage(named: "cardback", in: Bundle(for: self.classForCoder), compatibleWith: traitCollection) {
+                cardBackImage.draw(in: bounds)
+            }
+        }
         
     }
     
@@ -86,6 +111,32 @@ class PlayingCardView: UIView {
         label.isHidden = !isFaceUp
     }
 
+    private func drawPips() {
+        let pipsPerRowForRank = [[0], [1], [1,1], [1,1,1], [2,2], [2,1,2], [2,2,2], [2,1,2,2], [2,2,2,2], [2,2,1,2,2], [2,2,2,2,2]]
+        
+        func createPipString(thatFits pipRect: CGRect) -> NSAttributedString {
+            let maxVerticalPipCount = CGFloat(pipsPerRowForRank.reduce(0){ max($1.count, $0)})
+            let maxHorizontalPipCount = CGFloat(pipsPerRowForRank.reduce(0){ max($1.max() ?? 0, $0)})
+            let verticalPipRowSpacing = pipRect.size.height / maxVerticalPipCount
+            let attempedPipString = centeredAttributedString(suit, fontSize: verticalPipRowSpacing)
+            let probablyOkayPipStringFontSize = verticalPipRowSpacing / (attempedPipString.size().height / verticalPipRowSpacing)
+            let probablyOkayPipString = centeredAttributedString(suit, fontSize: probablyOkayPipStringFontSize)
+            if probablyOkayPipString.size().width > pipRect.size.width / maxHorizontalPipCount {
+                return centeredAttributedString(suit, fontSize: probablyOkayPipStringFontSize / (probablyOkayPipString.size().width / (pipRect.size.width / maxHorizontalPipCount)))
+            } else {
+                return probablyOkayPipString
+            }
+        }
+        
+//        for pipCount in pipsPerRowForRank{
+//            switch pipCount {
+//            case 1:
+//            pipStri
+//            default:
+//                <#code#>
+//            }
+//        }
+    }
     
 }
 
