@@ -16,6 +16,9 @@
 		E70C04F724D6A0160069847C /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C04F624D6A0160069847C /* PlayingCard.swift */; };
 		E70C04F924D6A2E40069847C /* PlayingCardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C04F824D6A2E40069847C /* PlayingCardDeck.swift */; };
 		E70C04FF24D6ABF70069847C /* PlayingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C04FE24D6ABF70069847C /* PlayingCardView.swift */; };
+		E75B2EED25DC4D5300A9AA12 /* CMMotionManager+shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75B2EEC25DC4D5300A9AA12 /* CMMotionManager+shared.swift */; };
+		E75FB80E24E5A3120017F3F6 /* MulitipleCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75FB80D24E5A3120017F3F6 /* MulitipleCardsViewController.swift */; };
+		E7E46B6C24E94C3A0003C3EE /* CardBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E46B6B24E94C3A0003C3EE /* CardBehavior.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		E70C04F624D6A0160069847C /* PlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
 		E70C04F824D6A2E40069847C /* PlayingCardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardDeck.swift; sourceTree = "<group>"; };
 		E70C04FE24D6ABF70069847C /* PlayingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardView.swift; sourceTree = "<group>"; };
+		E75B2EEC25DC4D5300A9AA12 /* CMMotionManager+shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMMotionManager+shared.swift"; sourceTree = "<group>"; };
+		E75FB80D24E5A3120017F3F6 /* MulitipleCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulitipleCardsViewController.swift; sourceTree = "<group>"; };
+		E7E46B6B24E94C3A0003C3EE /* CardBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBehavior.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,8 @@
 			children = (
 				E70C04F824D6A2E40069847C /* PlayingCardDeck.swift */,
 				E70C04F624D6A0160069847C /* PlayingCard.swift */,
+				E7E46B6B24E94C3A0003C3EE /* CardBehavior.swift */,
+				E75B2EEC25DC4D5300A9AA12 /* CMMotionManager+shared.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -104,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				E70C04E624D6A0000069847C /* ViewController.swift */,
+				E75FB80D24E5A3120017F3F6 /* MulitipleCardsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -180,11 +189,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E70C04E724D6A0000069847C /* ViewController.swift in Sources */,
+				E75B2EED25DC4D5300A9AA12 /* CMMotionManager+shared.swift in Sources */,
 				E70C04FF24D6ABF70069847C /* PlayingCardView.swift in Sources */,
+				E75FB80E24E5A3120017F3F6 /* MulitipleCardsViewController.swift in Sources */,
 				E70C04E324D6A0000069847C /* AppDelegate.swift in Sources */,
 				E70C04F924D6A2E40069847C /* PlayingCardDeck.swift in Sources */,
 				E70C04F724D6A0160069847C /* PlayingCard.swift in Sources */,
 				E70C04E524D6A0000069847C /* SceneDelegate.swift in Sources */,
+				E7E46B6C24E94C3A0003C3EE /* CardBehavior.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +343,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WVUV9Z888F;
 				INFOPLIST_FILE = PlayingCard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -349,6 +362,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WVUV9Z888F;
 				INFOPLIST_FILE = PlayingCard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
